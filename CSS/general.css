@@ -4,6 +4,27 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header{
+    padding: 2rem;
+    background-color: beige;
+}
+
+body{
+    background-image: url('../IMG/background2.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 1em;
+}
+
+.hero{
+    padding: 2rem;}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
 section {
     display: grid;
     grid-template-columns: 1fr 1fr;
