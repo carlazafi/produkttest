@@ -1,43 +1,41 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 header{
     padding: 2rem;
-    background-color: beige;
+    background-color: rgb(201, 219,226);
 }
 
 body{
     background: white;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 1em;
 }
 
 .hero{
     padding: 2rem;}
 
+
 a{
     text-decoration: none;
     color: black;
 }
-
 section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
-article{
+.card{
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 5;
     gap: 1rem;
-    background-color: beige;
+    background-color: rgb(199, 216, 217);
     padding: 10px;
+     transition: 0.2s ease;
     img {
         width: 100%;
         height: 100%;
@@ -45,14 +43,25 @@ article{
     }
 }
 
-h1, h2{
-    padding: 2rem;
+a.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-img{
+.hero-img{
     max-width: 100%;
 }
 
+#tilbageknap{
+     background-color: rgb(199, 216, 217);
+     border-radius: 8px;
+     padding: 5px;
+     margin: 2px;
+}
+
+h1{
+    padding: 2rem;
+}
 @media (min-width: 800px) {
     section {
         grid-template-columns: 1fr 1fr 1fr 1fr;
