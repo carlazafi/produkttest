@@ -10,7 +10,7 @@ header{
 }
 
 body{
-    background-image: url('../IMG/background2.avif');
+    background: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,8 +45,20 @@ article{
     }
 }
 
+h1, h2{
+    padding: 2rem;
+}
+
+img{
+    max-width: 100%;
+}
+
 @media (min-width: 800px) {
     section {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .hero{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
     }
 }

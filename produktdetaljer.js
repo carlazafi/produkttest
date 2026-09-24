@@ -1,15 +1,18 @@
-const endpoint = "https://kea-alt-del.dk/t7/api/products";
 
 
-const productid=123456;
-const imagePath=`https://kea-alt-del.dk/t7/images/webp/640/${productid}.webp` 
+const id = new URLSearchParams(window.location.search).get("id");
+
+console.log("id");
+
+const endpoint = `https://kea-alt-del.dk/t7/api/products/${id}`;
+
+const produkt = document.querySelector("#produkt");
 
 fetch(endpoint).then(res=>res.json()).then(visData);
 
-function visData(json){
-    console.log(json);
-    json.forEach(element => {
-        produktliste.innerHTML += 
+function visData(element) {
+    console.log(element);
+        produkt.innerHTML = 
         `<a href=produktdetaljer.html?id=${element.id}>
         <article class=".card">
         <img src=https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp alt="produktbillede" />
@@ -19,7 +22,4 @@ function visData(json){
             <p>${element.category}</p>
         </article>
         </a>`
-    });
-}
-
-const produktliste = document.querySelector(".produktliste");
+    };
