@@ -12,11 +12,41 @@ header{
 body{
     background: white;
     margin: 1em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+     flex: 1;
 }
 
-.hero{
-    padding: 2rem;}
+footer{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
+.hero {
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    h1, h2{
+        color: black
+    }
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(1.2);
+    z-index: -1;
+}
+
+h1, h2{
+    margin-top: 1rem;
+}
 
 a{
     text-decoration: none;
@@ -26,6 +56,13 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+}
+
+.produktliste{
+    margin-bottom: 1rem;
+}
+.forsidetekst{
+    text-align: center;
 }
 
 .card{
@@ -48,26 +85,55 @@ a.card:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.hero-img{
-    max-width: 100%;
-}
 
 #tilbageknap{
      background-color: rgb(199, 216, 217);
      border-radius: 8px;
-     padding: 5px;
-     margin: 3px;
+     padding: 8px;
+     margin-top: 2px;
+     margin-bottom: 8px;
+     border: none;
+     cursor: pointer;
 }
 
-h1{
-    padding: 2rem;
+#kategoriContainer{
+    display: grid;
+    padding-top: 2rem;
+
+    a{
+        background-color: rgb(201, 219,226);
+        padding: 8px;
+        text-align: center;
+        border-radius: 10px;
+    }
 }
+
+
+
 @media (min-width: 800px) {
-    section {
+    header{
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .forsidetekst{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+    #produktliste {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    #kategoriContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .hero{
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
+
+    
 }
