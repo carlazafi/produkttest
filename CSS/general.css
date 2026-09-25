@@ -44,6 +44,10 @@ footer{
     z-index: -1;
 }
 
+h1, h2{
+    margin-top: 1rem;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -54,7 +58,9 @@ section {
     gap: 1rem;
 }
 
-
+.produktliste{
+    margin-bottom: 1rem;
+}
 .forsidetekst{
     text-align: center;
 }
@@ -83,9 +89,11 @@ a.card:hover {
 #tilbageknap{
      background-color: rgb(199, 216, 217);
      border-radius: 8px;
-     padding: 4px;
+     padding: 8px;
      margin-top: 2px;
      margin-bottom: 8px;
+     border: none;
+     cursor: pointer;
 }
 
 #kategoriContainer{
@@ -103,7 +111,12 @@ a.card:hover {
 
 
 @media (min-width: 800px) {
-.forsidetekst{
+    header{
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .forsidetekst{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -121,4 +134,6 @@ a.card:hover {
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
+
+    
 }
