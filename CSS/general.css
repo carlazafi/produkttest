@@ -56,6 +56,11 @@ section {
     margin-bottom: 1rem;
 }
 
+#produkt{
+    background-color: rgb(199, 216, 217);
+    
+}
+
 .udsolgt{
     filter: grayscale(1);
     opacity: 0.5;
@@ -64,6 +69,9 @@ section {
 
 .forsidetekst{
     text-align: center;
+}
+article{
+    position: relative;
 }
 
 .card{
