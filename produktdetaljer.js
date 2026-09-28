@@ -23,8 +23,8 @@ function visData(element) {
         <img src=https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp alt="produktbillede" />
             <h2>${element.productdisplayname}</h2>
             <h3>${element.brandname}</h3>
-            <p>${element.price}</p>
-            <p>${element.category}</p>
+            <p>DKK ${element.price},-</p>
+            <p>${element.usagetype}</p>
         </article>
         </a>`
     };
