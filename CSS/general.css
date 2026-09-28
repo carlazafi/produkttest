@@ -46,7 +46,7 @@ a{
     text-decoration: none;
     color: black;
 }
-section {
+#kategoricontainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -54,11 +54,16 @@ section {
 
 #produktliste{
     margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 #produkt{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: rgb(199, 216, 217);
-    
+    position: relative;
 }
 
 .udsolgt{
