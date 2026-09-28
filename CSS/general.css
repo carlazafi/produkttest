@@ -1,13 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-header{
-    padding: 2rem;
-    background-color: rgb(201, 219,226);
-}
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
 
 body{
     background: white;
@@ -58,11 +52,26 @@ section {
     gap: 1rem;
 }
 
-.produktliste{
+#produktliste{
     margin-bottom: 1rem;
 }
+
+#produkt{
+    background-color: rgb(199, 216, 217);
+    
+}
+
+.udsolgt{
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+
 .forsidetekst{
     text-align: center;
+}
+article{
+    position: relative;
 }
 
 .card{
@@ -109,13 +118,150 @@ a.card:hover {
 }
 
 
+header {
+  display: flex;
+  padding: 2rem;
+  background-color: rgb(201, 219,226);
+  position: relative;
+  align-items: center;
+}
+.menu {
+  display: none;
+}
+nav ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--color-p);
+}
 
+
+.tilbudslabel{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: yellow;
+}
+
+.burger {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  flex: 0 0 auto;
+  margin: 0 20px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%px;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.burger .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  transition: 0.2s linear;
+}
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+  transition: 0.2s linear;
+}
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  transition: 0.2s linear;
+}
+nav.active .menu {
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 3.6rem;
+  right: 0;
+  width: clamp(200px, 50vw, 400px);
+  z-index: 1;
+  opacity: 0.9;
+}
+/* header > nav li > a:after {
+    content: "";
+  } */
+nav.active .menu li {
+  margin: 40px 20px;
+  text-align: right;
+}
+nav.active .menu a {
+  font-size: 20px;
+  color: var(--color-bg3);
+}
+
+.logo {
+  width: 35px;
+}
 
 @media (min-width: 800px) {
     header{
         display: flex;
         gap: 2rem;
     }
+
+.burger {
+    display: none;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    border: none;
+    padding: 0;
+    gap: 36px;
+    color: var(--color-h2);
+  }
+
+  .menuItem {
+    padding: 0;
+    font-size: 14px;
+    position: relative;
+  }
+
+  .menuItem::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-h2);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+  }
+
+  .menuItem:hover {
+    color: var(--color-h2);
+  }
+  .menuItem:hover::after {
+    transform: scaleX(1);
+  }
     
     .forsidetekst{
     display: grid;
@@ -125,6 +271,7 @@ a.card:hover {
     #produktliste {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
 
     #kategoriContainer{
         display: grid;
