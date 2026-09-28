@@ -14,13 +14,19 @@ fetch(endpoint).then(res=>res.json()).then(visData);
 function visData(json){
     console.log(json);
     json.forEach(element => {
+        const tilbudspris = Math.round(element.price - (element.price * element.discount / 100));
         produktliste.innerHTML += 
-        `<a class="card" href=produktdetaljer.html?id=${element.id}>
+        ` <a class="card ${element.soldout ? "udsolgt" : ""}" href=produktdetaljer.html?id=${element.id}>
         <article class="card">
         <img src=https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp alt="produktbillede" />
             <h2>${element.productdisplayname}</h2>
             <h3>${element.brandname}</h3>
-             <p>DKK ${element.price},-</p>
+            ${element.discount 
+                ? 
+                `<p class='tilbudslabel'>-${element.discount}%</p>
+                <p>Før DKK ${element.price},- Nu ${tilbudspris} DKK,-</p>` 
+                : 
+                `<p>DKK ${element.price},-</p>`}
             <p>${element.usagetype}</p>
         </article>
         </a>`

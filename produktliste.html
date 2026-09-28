@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forside</title>
     <link rel="stylesheet" href="./CSS/general.css">
+    <link rel="icon" type="image/png" href="IMG/logo.png" />
 </head>
 <body>
-    <header>
-<nav>
-    <ul>
-        <a href="index.html">Forside</a>
-        <a href="" >Om</a>
-        <a href="" >Kontakt</a>
+      <header>
+        <a href="index.html"><img src="img/logo.png" alt="logo" class="logo" /></a>
+        <nav>
+    <ul class="menu">
+        <li><a class="menuItem" href="index.html">Forside</a></li>
+        <li><a class="menuItem" href="" >Om</a></li>
+        <li><a class="menuItem" href="" >Kontakt</a></li>
     </ul>
+    <button class="burger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
 </nav>
-
     </header>
     <main> 
         <div class="produktliste">
@@ -31,5 +37,6 @@
     </main>
     <footer></footer>
     <script src="produktliste.js"></script>
+    <script src="burgermenu.js"></script>
 </body>
 </html>
