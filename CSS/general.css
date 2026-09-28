@@ -46,11 +46,7 @@ a{
     text-decoration: none;
     color: black;
 }
-#kategoricontainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
+
 
 #produktliste{
     margin-bottom: 1rem;
@@ -60,10 +56,25 @@ a{
 }
 
 #produkt{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(199, 216, 217);
-    position: relative;
+   background-color: rgb(199, 216, 217);
+   padding: 1rem;
+   img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+#produkt h2 {
+    margin-top: 1rem;
+}
+
+#produkt h3 {
+    margin-top: 0.5rem;
+}
+
+#produkt p {
+    margin-top: 1rem;
 }
 
 .udsolgt{
@@ -71,10 +82,14 @@ a{
     opacity: 0.5;
 }
 
+.førpris {
+    text-decoration: line-through;
+}
 
 .forsidetekst{
     text-align: center;
 }
+
 article{
     position: relative;
 }
@@ -100,18 +115,18 @@ a.card:hover {
 }
 
 
-#tilbageknap{
-     background-color: rgb(199, 216, 217);
-     border-radius: 8px;
-     padding: 8px;
-     margin-top: 2px;
-     margin-bottom: 8px;
-     border: none;
-     cursor: pointer;
+#tilbageknap {
+    background-color: rgb(199, 216, 217);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 1rem 0;
+    border: none;
+    cursor: pointer;
 }
 
 #kategoriContainer{
     display: grid;
+    gap: 1rem;
     padding-top: 2rem;
 
     a{
@@ -122,6 +137,10 @@ a.card:hover {
     }
 }
 
+.udsolgtTekst {
+    font-weight: bold;
+    margin-top: 1rem;
+}
 
 header {
   display: flex;
@@ -136,10 +155,7 @@ header {
 nav ul {
   list-style: none;
 }
-a {
-  text-decoration: none;
-  color: var(--color-p);
-}
+
 
 
 .tilbudslabel{
@@ -160,7 +176,7 @@ a {
   height: 20px;
   cursor: pointer;
   position: absolute;
-  top: 50%px;
+  top: 50%;
   right: 20px;
   transform: translateY(-50%);
 }
@@ -212,11 +228,23 @@ nav.active .menu a {
   width: 35px;
 }
 
+
+
+.pris {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
 @media (min-width: 800px) {
     header{
         display: flex;
         gap: 2rem;
     }
+
+
+    
+
 
 .burger {
     display: none;
@@ -281,7 +309,17 @@ nav.active .menu a {
     #kategoriContainer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+         gap: 1rem;
     }
+
+
+    #produkt{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: rgb(199, 216, 217);
+    position: relative;
+}
 
     .hero{
         display: grid;

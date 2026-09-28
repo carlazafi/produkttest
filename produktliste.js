@@ -22,7 +22,7 @@ function visData(json){
             <h2>${element.productdisplayname}</h2>
             <h3>${element.brandname}</h3>
             ${element.discount ? `<p class='tilbudslabel'>-${element.discount}%</p>
-                <p>Før DKK ${element.price},- Nu ${tilbudspris} DKK,-</p>` 
+                <p><span class="førpris">Før DKK ${element.price},-</span> Nu DKK ${tilbudspris},-</p>` 
                 : `<p>DKK ${element.price},-</p>`}
             <p>${element.usagetype}</p>
         </article>
