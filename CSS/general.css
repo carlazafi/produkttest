@@ -124,6 +124,16 @@ a.card:hover {
     cursor: pointer;
 }
 
+.filterknap{
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
 #kategoriContainer{
     display: grid;
     gap: 1rem;
