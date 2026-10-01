@@ -4,21 +4,22 @@ const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${cat}&limit=3
 
 const produktliste = document.querySelector("#produktliste");
 
+const visantal = document.querySelector("#filtre span");
 
-const h2 = document.querySelector("h2");
-h2.textContent = cat;
+const h2 = document.querySelector("h2").textContent = cat;
+
 
 const tilbageknap = document.querySelector("#tilbageknap");
 tilbageknap.addEventListener("click", () => history.back());
 
 document.querySelectorAll("#filtre button").forEach(knap=>knap.addEventListener("click", filtrer));
+document.querySelectorAll("#sortering button").forEach(button=>button.addEventListener("click", sorter));
 
 let alleData, udsnit;
 
 fetch(endpoint).then(res => res.json()).then(data => { alleData = udsnit = data; visData(data); });
 
 function filtrer(e) {
-    console.log(e.target.textContent);
     const valgt = e.target.textContent;
     if (valgt == "Alle") {
         udsnit = alleData; 
@@ -28,7 +29,22 @@ function filtrer(e) {
     visData(udsnit);
 }
 
-const visantal = document.querySelector("#filtre span");
+function sorter(e){
+    console.log(e.target.textContent);
+    const valgt = e.target.textContent;
+    function Tilbudspris(element) { 
+        return Math.round(element.price - (element.price * element.discount / 100)); }
+    if (valgt == "Pris lav-høj") {
+        udsnit.sort((a, b) => Tilbudspris(a) - Tilbudspris(b));
+    } else if (valgt == "Pris høj-lav") {
+        udsnit.sort((a, b) => Tilbudspris(b) - Tilbudspris(a));
+    } else if (valgt == "A-Z") {
+        udsnit.sort((a, b) => a.productdisplayname.localeCompare(b.productdisplayname));
+    } else if (valgt == "Z-A") {
+        udsnit.sort((a, b) => b.productdisplayname.localeCompare(a.productdisplayname));
+    }
+    visData(udsnit);
+}
 
 function visData(json){
     visantal.textContent = json.length;
@@ -42,7 +58,7 @@ function visData(json){
             <h2>${element.productdisplayname}</h2>
             <h3>${element.brandname}</h3>
             ${element.discount ? `<p class='tilbudslabel'>-${element.discount}%</p>
-                <p><span class="førpris">Før DKK ${element.price},-</span> Nu DKK ${tilbudspris},-</p>` 
+                <p><span class="førpris">Før ${element.price},-DKK</span> Nu ${tilbudspris},-DKK</p>` 
                 : `<p>DKK ${element.price},-</p>`}
             <p>${element.usagetype}</p>
         </article>
