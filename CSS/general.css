@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Manrope;
+    src: url(/FONTS/Manrope-ExtraBold.woff2);
+}
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +16,7 @@ body{
 }
 main{
      flex: 1;
+     
 }
 
 footer{
@@ -40,6 +45,7 @@ footer{
 
 h1, h2{
     margin-top: 1rem;
+    font-family: Manrope;
 }
 
 a{
