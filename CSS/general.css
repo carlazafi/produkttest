@@ -56,7 +56,7 @@ a{
 }
 
 #produkt{
-   background-color: rgb(199, 216, 217);
+    background-color: rgb(201, 219,226);
    padding: 1rem;
    img {
         width: 100%;
@@ -99,7 +99,7 @@ article{
     grid-template-rows: subgrid;
     grid-row: span 5;
     gap: 1rem;
-    background-color: rgb(199, 216, 217);
+    background-color: rgb(201, 219,226);
     padding: 10px;
      transition: 0.2s ease;
     img {
@@ -116,7 +116,7 @@ a.card:hover {
 
 
 #tilbageknap {
-    background-color: rgb(199, 216, 217);
+    background-color: rgb(201, 219,226);
     border-radius: 8px;
     padding: 10px 15px;
     margin: 1rem 0;
@@ -132,6 +132,17 @@ a.card:hover {
     border-radius: 20px;
     margin-top: 1.5rem;
     cursor: pointer;
+}
+
+#sortering{
+    button{
+    border: 1px solid black;
+    padding: 8px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;}
 }
 
 #kategoriContainer{
@@ -171,9 +182,9 @@ nav ul {
 .tilbudslabel{
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 2rem;
     padding: 1rem;
-    background-color: yellow;
+    background-color: orange;
 }
 
 .burger {
@@ -253,9 +264,6 @@ nav.active .menu a {
     }
 
 
-    
-
-
 .burger {
     display: none;
   }
@@ -327,7 +335,7 @@ nav.active .menu a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    background-color: rgb(199, 216, 217);
+    background-color: rgb(201, 219,226);
     position: relative;
 }
 

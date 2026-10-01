@@ -28,6 +28,7 @@ function visData(element) {
                 <p><span class="førpris">Før DKK ${element.price},-</span> Nu DKK ${tilbudspris},-</p>` 
                 : `<p class="pris">DKK ${element.price},-</p>`}
             ${element.soldout ? `<p class="udsolgtTekst">Udsolgt</p>` : ""}
+            <p>${element.description}</p>
                 <p>${element.usagetype}</p>
              </div> 
         </article>`
